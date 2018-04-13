@@ -17,6 +17,7 @@ class NewSeries extends Component {
           genres: [],
           isLoading: false
         }
+        this.saveSeries = this.saveSeries.bind(this)
     }
 
     componentDidMount() {
@@ -29,24 +30,36 @@ class NewSeries extends Component {
             })
           }) 
       }
-      
+
+    saveSeries() {
+        const newSeries = {
+            name: this.refs.name.value,
+            status: this.refs.status.value,
+            genre: this.refs.genre.value,
+            comments: this.refs.comments.value
+        }
+        api.saveSeries(newSeries).then((res) => console.log(res))
+    }
+
     render() {
         return (
             <section className="intro-section">
                 <h1>Nova Série</h1>
                 <form>
-                    Nome: <input type="text" className="form-control" /><br />
+                    Nome: <input type="text" ref="name" className="form-control" /><br />
                     Status:
-                    <select>
+                    <select ref="status">
                         { Object.keys(statsuses).map( key =><option key={key} value={key}>{statsuses[key]}</option>)}
                     </select>
                     <br />
                     Gênero:
-                    <select>
+                    <select ref="genre">
                         { this.state.genres.map( key =><option key={key} value={key}>{key}</option>)}
                     </select>
                     <br />
-                    Comentários: <textarea className="form-control"></textarea>
+                    Comentários: <textarea ref="comments" className="form-control"></textarea>
+                    <br />
+                    <button type="button" className="btn btn-primary" onClick={this.saveSeries}>Salvar</button>
                 </form>
             </section>
         )    
