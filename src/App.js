@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Home from './Home'
+import Series from './Series'
 import NewSeries from './NewSeries'
 
 const About = () => <section className="intro-section"><h1>Sobre</h1></section>
@@ -41,6 +42,7 @@ class App extends Component {
             </div>
           </nav>
         <Route exact path='/' component={Home} />
+        <Route exact path='/series/:genre' component={Series} />
         <Route exact path='/new' component={NewSeries} />
         <Route exact path='/about' component={About} />
         </div> 
