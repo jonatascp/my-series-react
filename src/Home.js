@@ -44,7 +44,6 @@ class Home extends Component {
                         </div>
                     </div>
                     </section>
-
                     <section>
                     {
                         this.state.isLoading &&
