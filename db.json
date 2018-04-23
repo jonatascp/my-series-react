@@ -38,20 +38,6 @@
       "genre": "Comédia",
       "comments": "asdasdasdasd",
       "id": 8
-    },
-    {
-      "name": "The Walking dead",
-      "status": "watched",
-      "genre": "Ação",
-      "comments": "Zumbi",
-      "id": 9
-    },
-    {
-      "name": "bbbbbb",
-      "status": "watching",
-      "genre": "Ação",
-      "comments": "bbbbb",
-      "id": 10
     }
   ],
   "genres": [
